@@ -63,4 +63,9 @@ We are creating a hand held motor powered blender that uses PID to control the v
   * [Torque sensors](https://www.azosensors.com/article.aspx?ArticleID=605)
 * Motor resistance
 
+## Notes
 
+### Images
+![alt text](https://github.com/jbrown56/PID_mixer/blob/master/Photots/sketch_solution_1.jpg)
+![alt text](https://github.com/jbrown56/PID_mixer/blob/master/Photots/sketch_solution_2.jpg)
+![alt text](https://github.com/jbrown56/PID_mixer/blob/master/Photots/sketch_solution_3.jpg)
