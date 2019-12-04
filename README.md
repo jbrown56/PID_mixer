@@ -16,7 +16,7 @@ We are creating a hand held motor powered blender that uses PID to control the v
 * Arduino
 * Motor
 * Dash (company) hand Mixer
-  * ![alt text](https://www.amazon.com/SHM01DSWH-Electric-Whipping-Brownies-Meringues/dp/B016CBFUV4?th=1)
+  * [Dash Mixer on Amazon](https://www.amazon.com/SHM01DSWH-Electric-Whipping-Brownies-Meringues/dp/B016CBFUV4?th=1)
 * LCD
 * Potentiometer
 * LED Light
@@ -48,4 +48,19 @@ We are creating a hand held motor powered blender that uses PID to control the v
 * Fitting the LCD screen and the photointerrupter
 
 ## Solutions
+
+* Cut photo interrupter in half and use reflective tape of the fan
+  * Light reflective photo - [Different types of Photointerruptors](https://www.rohm.com/electronics-basics/photointerrupters/what-is-a-photointerrupter)
+  * [photoreflector](https://www.deviceplus.com/how-tos/arduino-guide/entry015/)
+  * Reflective tape
+* Use electromagnetic detector
+* We could use a torque detector
+* Find a space to fit the photointerrupter
+* Cut of fan grate thing and have photointerrupter on outside with 3d printed part connected to fan
+* Discussing these problems with the other group
+* Try to measure torque
+  * [Resource about torque ](https://measurementsensors.honeywell.com/techresources/appnotes/Pages/Ways_to_Measure_the_Force_Acting_on_a_Rotating_Shaft.aspx)
+  * [Torque sensors](https://www.azosensors.com/article.aspx?ArticleID=605)
+* Motor resistance
+
 
