@@ -1,3 +1,7 @@
+//Detach Interrupt
+//Ella McLaren
+//Calculates the rotations per second or how fast the blades are moving using a photointerrupter. It then prints that speed.
+
 int photoPin = 2;
 int ledPin = 8;
 int photoState = 0;
@@ -9,15 +13,14 @@ float rps = interrupt/Time;
 int on()
 {
 	// Variables are needed
-	digitalWrite(ledPin, HIGH);
+	//digitalWrite(ledPin, HIGH);
 	interrupt = interrupt + 1;
 }
 
 int off()
 {
 	// Variebles are needed
-	digitalWrite(ledPin, LOW);
-	// interrupt = interrupt -1;
+	//digitalWrite(ledPin, LOW);
 }
 
 void setup()

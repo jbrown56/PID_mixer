@@ -1,4 +1,5 @@
 //*Program to display the photoreflector input values
+//Official Mixer Check Code
 //********************************************************************
 int pin = 0; //
 int interuption;
@@ -14,8 +15,6 @@ void setup() {
 Serial.begin(9600);
 
 pinMode(pin, INPUT);
-attachInterrupt(digitalPinToInterrupt(2), rising, RISING);
-attachInterrupt(digitalPinToInterrupt(3), falling, FALLING);
 }
 
 

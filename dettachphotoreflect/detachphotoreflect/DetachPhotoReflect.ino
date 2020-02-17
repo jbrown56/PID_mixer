@@ -1,5 +1,6 @@
 // Justine and Ella
 //Detach interrupt code
+// Official Code For THE Project
 //get detach interrupt to workd with the photoreflector to measure interrupts and convert that to speed
 
 int photoPin = 2;
@@ -9,19 +10,20 @@ int interrupt = 0;
 long oldTime = 0;
 long Time = 0;
 float rps = interrupt/Time;
+int toggle; 
 
 int on()
 {
 	// Variables are needed
-	digitalWrite(ledPin, HIGH);
+toggle = 0;
+	
 }
 
 int off(){
-
+	if (toggle = 0) {
+	toggle = toggle + 1;
 	interrupt = interrupt + 1;
-	// Variebles are needed
-	digitalWrite(ledPin, LOW);
-	// interrput = interrupt -1;
+}
 }
 
 void setup()
@@ -37,7 +39,7 @@ void setup()
 void loop()
 {
 	Time = millis(); //Time counts up
-	if (Time > 2000 + oldTime) //It runs every second
+	if (Time > 1000 + oldTime) //It runs every second
 	{
 		detachInterrupt(digitalPinToInterrupt(3));
 		detachInterrupt(digitalPinToInterrupt(2));
