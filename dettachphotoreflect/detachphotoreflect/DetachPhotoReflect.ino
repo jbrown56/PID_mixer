@@ -1,8 +1,7 @@
 // Justine and Ella
-//Detach interrupt code
+// Detach interrupt code
 // Official Code For THE Project
-//get detach interrupt to workd with the photoreflector to measure interrupts and convert that to speed
-
+// get detach interrupt to workd with the photoreflector to measure interrupts and convert that to speed
 int photoPin = 2;
 int ledPin = 8;
 int photoState = analogRead(photoPin);
@@ -10,20 +9,21 @@ int interrupt = 0;
 long oldTime = 0;
 long Time = 0;
 float rps = interrupt/Time;
-int toggle; 
+int toggle;
 
 int on()
 {
 	// Variables are needed
-toggle = 0;
-	
+	if (toggle == 0)
+	{
+		interrupt = interrupt + 1;
+		toggle = 1;
+	}
 }
 
-int off(){
-	if (toggle = 0) {
-	toggle = toggle + 1;
-	interrupt = interrupt + 1;
-}
+int off()
+{
+	toggle = 0;
 }
 
 void setup()
@@ -38,19 +38,21 @@ void setup()
 
 void loop()
 {
-	Time = millis(); //Time counts up
-	if (Time > 1000 + oldTime) //It runs every second
+	Time = millis(); // Time counts up
+	if (Time > 1000 + oldTime)
+		//It runs every second
 	{
 		detachInterrupt(digitalPinToInterrupt(3));
 		detachInterrupt(digitalPinToInterrupt(2));
-		rps = interrupt/((Time - oldTime)/1000); //The rate it changes is the number of interrupts divided by the amount of milliseconds passed. Dividing it by 1000 puts it in terms of seconds
-		oldTime = millis(); //Resets old time back to 0
-		interrupt = 0; //Resets the amount of interrupts
+		rps = interrupt/ ((Time - oldTime) /1000); // The rate it changes is the number of interrupts divided by the amount of milliseconds passed. Dividing it by 1000 puts it in terms of seconds
+		oldTime = millis(); // Resets old time back to 0
+		interrupt = 0; // Resets the amount of interrupts
+		Serial.println("time > 1000!");
+
 		attachInterrupt(digitalPinToInterrupt(3), off, FALLING);
 		attachInterrupt(digitalPinToInterrupt(2), on, RISING);
-		Serial.println("time > 1000!");
+		
 	}
-
 	Serial.println(rps);
 	delay(100);
 }
