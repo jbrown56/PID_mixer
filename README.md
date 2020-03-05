@@ -8,8 +8,8 @@ We are creating a hand held motor powered blender that uses PID to control the v
 
 ### Measures of Success 
 
-1. If we can actually use the mixer to successfully mix batter
-2. If the speed of the mixer remains constant and accurate to the desired value despite changes (increases/decreases) in resistance. (The actual speed of the mixer should always match the desired speed.)
+1. Is the serial monitor reading accurate values for speed (rps)?
+2. is the photo reflector securely mounted inside the mixer?
 
 ### Materials
  
@@ -26,13 +26,14 @@ We are creating a hand held motor powered blender that uses PID to control the v
 * Wire covers
 
 
-### Constraints
+### Constraints/Problems
  
 * The size of the mixer body does not easily allow a photo interrupter 
 * Time
-* Limited knowledge of PID
+* Choosing either photointerruptor or magnetic dectector or other
 * Whether or not the other group decides to make a new frame for the mixer
-* 120 volts of hand mixer compared to 9 volts of arduino
+* wirting code that will work for the mixer
+* Assembling everything: where to put phot reflector and how not to brake the wires. 
 
 ### Schedule 
 
@@ -42,7 +43,10 @@ We are creating a hand held motor powered blender that uses PID to control the v
 | 12/2-13 | Finish our notebooks and plan(Sketches and research). Have basic outline of PID code/understand PID|Completed plan and researched PID |
 | 12/16-1/8 |Choose a method of measuring speed to attempt. Attach Interrupts with phorointerruptpr. Wire photo reflector and read values. |Completed plan and decided on a photo reflector. Ella wrote code with detachinterrupt using the photointerrupter. Justine wired the photoreflector correctly and wrote code to check the value.|
 | 1/9-17 | Combine two codes and test. Sauder the photo reflector’s wires correctly, start solidworks design for part to attach photo.  |We combined our codes and built a prototype to test if the code was working. We also soldered wires and wire covers onto the photo reflector. |
-| TBD | | |
+| 1/20-31 | Work on photo reflector holder design. Asses current problem with code which causes the serial monitor to read only 0. |We finished and printed the part. We also fixed that issue with our code by putting the photo reflector closer to the fan.|
+|2/3-14| Attach photo reflector with part and adjust to get the code working. | We attached our photo reflector but had some setbacks because we had to break the photo reflector and had to resauder another one. We then worked on cleaning up our code. |
+|2/17-28| Fix any issues with code. Maybe add in a toggle. Switch wiring to a prototyping shield.|We completed all goals (code didn’t need toggle). |
+|3/4-7| documentation||
 
 ### Potential Problems
 
@@ -68,12 +72,14 @@ We are creating a hand held motor powered blender that uses PID to control the v
   * [Torque sensors](https://www.azosensors.com/article.aspx?ArticleID=605)
 * Motor resistance
 
-### Notes
-
-#### Images
+### Images
 ![alt text](https://github.com/jbrown56/PID_mixer/blob/master/Photots/sketch_solution_1.jpg)
 ![alt text](https://github.com/jbrown56/PID_mixer/blob/master/Photots/sketch_solution_2.jpg)
 ![alt text](https://github.com/jbrown56/PID_mixer/blob/master/Photots/sketch_solution_3.jpg)
 
 ## Reflection
+
+We encountered several issues when working on this project. Our first problem was with the photo reflector itself. We had to figure out what sort of device we could use that was small enough to fit inside the mixer. Once we decided on the photo reflector we had a lot of trouble figuring out where to put it. We knew we had to use the fan to measure the speed so we had limited options. Eventually we were able to attach the sensor above the motor so that it sat only a few millimeters from the fan. 
+	Our second big problem was with the code. We couldn’t get out the sensor to trigger the falling and rising of the attachinterrupt function. We did some research and realized that the value had to go from low to high. Low being less than 512, high being above. Once we did that we realized our sensor wasn’t reading low enough values. We fixed that by both moving it a little closer to the fan and by reducing the resistance. 
+	Additionally we had a problem as we used two attach interrupts with two different pins unnecessarily. Once we found out we could use just one and it would be much simpler but still function the same way; we switched it. 
 
