@@ -73,9 +73,20 @@ We are creating a hand held motor powered blender that uses PID to control the v
 * Motor resistance
 
 ### Images
+
+#### Sketches
+
 ![alt text](https://github.com/jbrown56/PID_mixer/blob/master/Photots/sketch_solution_1.jpg)
 ![alt text](https://github.com/jbrown56/PID_mixer/blob/master/Photots/sketch_solution_2.jpg)
 ![alt text](https://github.com/jbrown56/PID_mixer/blob/master/Photots/sketch_solution_3.jpg)
+
+#### Fritzing
+
+![alt text](https://github.com/jbrown56/PID_mixer/blob/master/Photots/wiring_diagram.PNG)
+
+#### Solid Works
+
+![alt text](https://github.com/jbrown56/PID_mixer/blob/master/Photots/ClampPic.PNG)
 
 ## Reflection
 
