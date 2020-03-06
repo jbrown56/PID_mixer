@@ -61,6 +61,7 @@ We are creating a hand held motor powered blender that uses PID to control the v
 * Cut photo interrupter in half and use reflective tape of the fan
   * Light reflective photo - [Different types of Photointerruptors](https://www.rohm.com/electronics-basics/photointerrupters/what-is-a-photointerrupter)
   * [photoreflector](https://www.deviceplus.com/how-tos/arduino-guide/entry015/)
+  * [Proper circuit diagram for photoreflector](https://learn.sparkfun.com/tutorials/qrd1114-optical-detector-hookup-guide/all)
   * Reflective tape
 * Use electromagnetic detector
 * We could use a torque detector
