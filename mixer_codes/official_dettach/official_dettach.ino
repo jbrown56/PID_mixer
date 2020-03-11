@@ -14,7 +14,7 @@ int test = 0;
 int check = 750; // how often the detach interrupt checks
 void on()
 {
-	if (toggle == 0)
+	if (toggle == 0)//toggle prevents interrupts from counting multiple times when on white
 	{
 		interrupt = interrupt + 1;
 		digitalWrite(ledPin, HIGH);
@@ -24,7 +24,7 @@ void on()
 
 void off()
 {
-	toggle = 0;
+	toggle = 0;//resets toggle
 	digitalWrite(ledPin, LOW);
 	// Variebles are needed
 	// interrupt = interrupt + 1;
