@@ -46,7 +46,7 @@ We are creating a hand held motor powered blender that uses PID to control the v
 | 1/20-31 | Work on photo reflector holder design. Asses current problem with code which causes the serial monitor to read only 0. |We finished and printed the part. We also fixed that issue with our code by putting the photo reflector closer to the fan.|
 |2/3-14| Attach photo reflector with part and adjust to get the code working. | We attached our photo reflector but had some setbacks because we had to break the photo reflector and had to resauder another one. We then worked on cleaning up our code. |
 |2/17-28| Fix any issues with code. Maybe add in a toggle. Switch wiring to a prototyping shield.|We completed all goals (code didn’t need toggle). |
-|3/4-7| documentation||
+|3/4-11| documentation||
 
 ### Potential Problems
 
