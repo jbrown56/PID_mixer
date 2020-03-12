@@ -1,23 +1,22 @@
 // Justine and Ella
 // Detach interrupt code
-// get detach interrupt to workd with the photoreflector to measure interrupts and convert that to speed
-int photoPin1 = 2;
+// get detach interrupt to workd with the photoreflector. Measures the rps, or the amount of times the interrupts go from low to high per 750 miliseconds.
+int photoPin1 = 2; //Pins for the photoreflector. Two are needed to simplify what the photoreflector has to do,
 int photoPin2 = 3;
-int ledPin = 9;
-int photoState = analogRead(photoPin1);
-int interrupt = 0;
+int ledPin = 9; //A test to find out if the code is detecting the switch from high to low
+int photoState = analogRead(photoPin1); //Switches from an analog pin to a digital pin so that the photoreflector can have an attach interrupt.
+int interrupt = 0; //When on white, the value is low, and when it is on black, the value is high
 long oldTime = 0;
 long Time = 0;
 float rps = interrupt/Time;
 volatile int toggle = 0;
-int test = 0;
 int check = 750; // how often the detach interrupt checks
 void on()
 {
 	if (toggle == 0)//toggle prevents interrupts from counting multiple times when on white
 	{
 		interrupt = interrupt + 1;
-		digitalWrite(ledPin, HIGH);
+		digitalWrite(ledPin, HIGH); //When the fan is black
 		// toggle = 1;
 	}
 }
@@ -25,7 +24,7 @@ void on()
 void off()
 {
 	toggle = 0;//resets toggle
-	digitalWrite(ledPin, LOW);
+	digitalWrite(ledPin, LOW); //When the fan is white
 	// Variebles are needed
 	// interrupt = interrupt + 1;
 }
@@ -33,8 +32,8 @@ void off()
 void setup()
 {
 	Serial.begin(9600);
-	pinMode(photoPin1, INPUT);
-	pinMode(photoPin2, INPUT);
+	pinMode(photoPin1, INPUT); 
+	pinMode(photoPin2, INPUT); //Make INPUT_PULLUP if the pullup resistor doesn't work
 	pinMode(ledPin, OUTPUT);
 	attachInterrupt(digitalPinToInterrupt(photoPin2), off, RISING); // Works faster than a loop.
 	// If there is nothing in the way, the light turns off
@@ -69,6 +68,5 @@ void loop()
 	// Serial.print("\t");
 	// Serial.println(rps);
 	// Serial.print("\t");
-	// Serial.println(test);
 	delay(100);
 }
