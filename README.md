@@ -73,6 +73,20 @@ We are creating a hand held motor powered blender that uses PID to control the v
   * [Torque sensors](https://www.azosensors.com/article.aspx?ArticleID=605)
 * Motor resistance
 
+
+## Reflection
+
+### Code
+
+commented code [here](https://github.com/jbrown56/PID_mixer/blob/master/mixer_codes/official_dettach/official_dettach.ino)
+
+### Problems we faced 
+
+We encountered several issues when working on this project. Our first problem was with the photo reflector itself. We had to figure out what sort of device we could use that was small enough to fit inside the mixer. Once we decided on the photo reflector we had a lot of trouble figuring out where to put it. We knew we had to use the fan to measure the speed so we had limited options. Eventually we were able to attach the sensor above the motor so that it sat only a few millimeters from the fan. 
+	Our second big problem was with the code. We couldn’t get out the sensor to trigger the falling and rising of the attachinterrupt function. We did some research and realized that the value had to go from low to high. Low being less than 512, high being above. Once we did that we realized our sensor wasn’t reading low enough values. We fixed that by both moving it a little closer to the fan and by reducing the resistance. 
+	Additionally we had a problem as we used two attach interrupts with two different pins unnecessarily. Once we found out we could use just one and it would be much simpler but still function the same way; we switched it. 
+
+
 ### Images
 
 #### Sketches
@@ -88,10 +102,3 @@ We are creating a hand held motor powered blender that uses PID to control the v
 #### Solid Works
 
 ![alt text](https://github.com/jbrown56/PID_mixer/blob/master/Photots/ClampPic.PNG)
-
-## Reflection
-
-We encountered several issues when working on this project. Our first problem was with the photo reflector itself. We had to figure out what sort of device we could use that was small enough to fit inside the mixer. Once we decided on the photo reflector we had a lot of trouble figuring out where to put it. We knew we had to use the fan to measure the speed so we had limited options. Eventually we were able to attach the sensor above the motor so that it sat only a few millimeters from the fan. 
-	Our second big problem was with the code. We couldn’t get out the sensor to trigger the falling and rising of the attachinterrupt function. We did some research and realized that the value had to go from low to high. Low being less than 512, high being above. Once we did that we realized our sensor wasn’t reading low enough values. We fixed that by both moving it a little closer to the fan and by reducing the resistance. 
-	Additionally we had a problem as we used two attach interrupts with two different pins unnecessarily. Once we found out we could use just one and it would be much simpler but still function the same way; we switched it. 
-
